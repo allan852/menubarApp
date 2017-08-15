@@ -1,7 +1,7 @@
 const {ipcRenderer} = window.require('electron')
 const React = require('react')
 const ReactDom = require('react-dom')
-require('spectre.css')
+require('antd/dist/antd.css')
 // <button id="teminate">close</button>
 
 function teminate(event) {

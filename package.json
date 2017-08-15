@@ -2,6 +2,7 @@
   "name": "menubarapp",
   "version": "1.0.0",
   "description": "A Menubar App Demo",
+  "repository": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
@@ -12,13 +13,13 @@
   "author": "ZYJ",
   "license": "ISC",
   "dependencies": {
+    "antd": "^2.12.6",
     "babel-register": "^6.24.1",
     "electron": "^1.7.5",
     "menubar": "^5.2.3",
     "nedb": "^1.8.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "spectre.css": "^0.2.14"
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
