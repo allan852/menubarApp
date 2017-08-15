@@ -1,6 +1,7 @@
-const {ipcRenderer} = require('electron')
+const {ipcRenderer} = window.require('electron')
 const React = require('react')
 const ReactDom = require('react-dom')
+require('spectre.css')
 // <button id="teminate">close</button>
 
 function teminate(event) {
@@ -10,12 +11,12 @@ function teminate(event) {
 	ipcRenderer.send('terminate-app')
 }
 
-// first component 
+// first component
 function TeminateButton() {
 	return <button onClick={teminate}>Close</button>
 }
 
 ReactDom.render(
-	React.createElement(TeminateButton, null, null),
+	<TeminateButton />,
 	document.getElementById('root')
 )

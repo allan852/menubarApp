@@ -1,12 +1,13 @@
 {
   "name": "menubarapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Menubar App Demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p",
+    "watch": "webpack -w",
     "start": "electron .",
-    "watch": "babel -w ./app/app.js -o ./dist/build.js"
+    "babel-watch": "babel -w ./app/app.js -o ./dist/build.js"
   },
   "author": "ZYJ",
   "license": "ISC",
@@ -14,8 +15,10 @@
     "babel-register": "^6.24.1",
     "electron": "^1.7.5",
     "menubar": "^5.2.3",
+    "nedb": "^1.8.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "spectre.css": "^0.2.14"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -23,6 +26,10 @@
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
     "webpack": "^3.5.4"
   }
 }
