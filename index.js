@@ -4,7 +4,7 @@ const { ipcMain } = require('electron')
 let mb = menubar()
 
 mb.on('ready', () => {
-	console.log('app is ready', mb)
+	console.log('app is ready')
 	// mb.showWindow()
 	// mb.window.webContents.openDevTools()
 })

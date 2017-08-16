@@ -10,7 +10,7 @@ function teminate(event) {
 	ipcRenderer.send('terminate-app')
 }
 
-// first component 
+// first component
 function TeminateButton() {
 	return <button onClick={teminate}>Close</button>
 }
