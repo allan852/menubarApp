@@ -1,7 +1,8 @@
 const React = require('react')
 import {Layout, Button, Radio, Row, Col} from 'antd'
 const {Header, Content, Footer, Sider} = Layout
-
+import fontAwesome from 'font-awesome/css/font-awesome.css'
+import AppHeader from './components/header'
 import AppFooter from './components/footer'
 
 const contentStyle = {
@@ -27,25 +28,13 @@ class App extends React.Component {
 		return (
 			<div style={{padding: '10px'}}>
 				<div>
-					<Row type="flex" justify="center" gutter={8}>
-						<Col>
-							<Radio.Group onChange={this.handleChangeType}>
-								<Radio.Button value="text">文本</Radio.Button>
-								<Radio.Button value="html">HTML</Radio.Button>
-								<Radio.Button value="img">图片</Radio.Button>
-							</Radio.Group>
-						</Col>
-					</Row>
+					<AppHeader handleChangeType={this.handleChangeType} />
 				</div>
 				<div style={ contentStyle }>
 					<Row>{this.state.type}</Row>
 				</div>
 				<div>
-					<Row>
-						<Col>
-							<AppFooter />
-						</Col>
-					</Row>
+					<AppFooter />
 				</div>
 			</div>
 		)

@@ -30,6 +30,72 @@ module.exports = {
           {loader: 'css-loader'},
           {loader: 'less-loader'}
         ]
+      },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: './dist/'
+            }
+          }
+        ]
       }
     ]
   },

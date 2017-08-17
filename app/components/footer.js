@@ -1,6 +1,6 @@
 const {ipcRenderer} = window.require('electron')
 const React = require('react')
-import { Button } from 'antd'
+import { Button, Row, Col } from 'antd'
 
 class Footer extends React.Component {
   constructor(props) {
@@ -8,15 +8,16 @@ class Footer extends React.Component {
   }
 
   teminateApp = (e) => {
-    console.log("temenate")
+    // console.log("temenate")
   	ipcRenderer.send('terminate-app')
   }
 
   render() {
     return (
-      <div>
-        <Button icon="search" onClick={ this.teminateApp }>Search</Button>
-      </div>
+      <Row type="flex" justify="space-between">
+        <Col span={12}><Button><i className="fa fa-cog"></i></Button></Col>
+        <Col span={12} style={{textAlign: 'right'}}><Button onClick={ this.teminateApp }><i className="fa fa-sign-out"></i></Button></Col>
+      </Row>
     )
   }
 }
