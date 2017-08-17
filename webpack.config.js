@@ -1,7 +1,7 @@
 var path = require('path')
 
 module.exports = {
-  entry: path.resolve(__dirname, 'app/app.js'),
+  entry: path.resolve(__dirname, 'app/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'build.js'
@@ -15,8 +15,8 @@ module.exports = {
         ],
         loader: 'babel-loader',
         options: {
-          presets: ["env"],
-          plugins: []
+          presets: ["env", "stage-1"],
+          // plugins: [["import", { "libraryName": "antd", "style": "css" }]]
         }
       },
       {
