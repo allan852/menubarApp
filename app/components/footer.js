@@ -9,7 +9,7 @@ class Footer extends React.Component {
 
   teminateApp = (e) => {
     // console.log("temenate")
-  	ipcRenderer.send('terminate-app')
+  	ipcRenderer.send('app:terminate')
   }
 
   render() {

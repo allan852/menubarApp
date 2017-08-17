@@ -55,7 +55,7 @@ mb.on('will-quit', () => {
 })
 
 // linten for render
-ipcMain.on('terminate-app', () => {
+ipcMain.on('app:terminate', () => {
 	mb.app.quit()
 })
 

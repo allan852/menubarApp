@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
       <Row type="flex" justify="center" gutter={8}>
         <Col>
-          <Radio.Group onChange={this.props.handleChangeType}>
+          <Radio.Group onChange={this.props.handleChangeType} value={this.props.currentValue}>
             <Radio.Button value="text">文本</Radio.Button>
             <Radio.Button value="html">HTML</Radio.Button>
             <Radio.Button value="img">图片</Radio.Button>
