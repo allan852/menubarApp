@@ -9808,22 +9808,104 @@ var WelcomeClass = function (_React$Component) {
 	return WelcomeClass;
 }(_react2.default.Component);
 
-function App() {
-	return _react2.default.createElement(
-		'div',
-		null,
-		_react2.default.createElement(Welcome, { name: 'Sara' }),
-		_react2.default.createElement(Welcome, { name: 'Cahal' }),
-		_react2.default.createElement(Welcome, { name: 'Edite' })
-	);
-}
-
 console.log(hello);
 console.log(Hello);
 console.log(Welcome);
 console.log(_react2.default.createElement(Welcome, null));
-console.log(App());
-console.log(_react2.default.createElement(App, null));
+
+// extracting components, state, lifecycle hooks
+
+var Clock = function (_React$Component2) {
+	_inherits(Clock, _React$Component2);
+
+	function Clock(props) {
+		_classCallCheck(this, Clock);
+
+		var _this2 = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
+
+		_this2.state = {
+			date: new Date()
+		};
+		return _this2;
+	}
+
+	_createClass(Clock, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this3 = this;
+
+			this.timerID = setInterval(function () {
+				return _this3.tick();
+			}, 1000);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			clearInterval(this.timerID);
+		}
+	}, {
+		key: 'tick',
+		value: function tick() {
+			this.setState({
+				date: new Date()
+			});
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h1',
+					null,
+					'Hello, world!'
+				),
+				_react2.default.createElement(
+					'h2',
+					null,
+					'It is ',
+					this.state.date.toLocaleTimeString(),
+					'.'
+				)
+			);
+		}
+	}]);
+
+	return Clock;
+}(_react2.default.Component);
+
+// handle events
+// React events are named using camelCase
+// With JSX you pass a function as the event handler, rather than a string
+
+
+function ActionLink() {
+	function handleClick(e) {
+		e.preventDefault();
+		console.log('The link was clicked');
+	}
+
+	return _react2.default.createElement(
+		'a',
+		{ href: '#', onClick: handleClick },
+		'Click me'
+	);
+}
+
+function App() {
+	return _react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(Clock, null),
+		_react2.default.createElement(Clock, null),
+		_react2.default.createElement(Clock, null),
+		_react2.default.createElement(Clock, null)
+	);
+}
+
+//Conditional Rendering
+
 
 _reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
 
