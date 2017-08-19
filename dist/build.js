@@ -9762,50 +9762,50 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 __webpack_require__(184);
 
 var hello = _react2.default.createElement(
-	'h1',
-	null,
-	'Hello React'
+  'h1',
+  null,
+  'Hello React'
 );
 var Hello = _react2.default.createElement(
-	'h1',
-	null,
-	'Hello World'
+  'h1',
+  null,
+  'Hello World'
 );
 
 // function component
 function Welcome(props) {
-	return _react2.default.createElement(
-		'h1',
-		null,
-		'Hello ',
-		props.name
-	);
+  return _react2.default.createElement(
+    'h1',
+    null,
+    'Hello ',
+    props.name
+  );
 }
 
 // class component
 
 var WelcomeClass = function (_React$Component) {
-	_inherits(WelcomeClass, _React$Component);
+  _inherits(WelcomeClass, _React$Component);
 
-	function WelcomeClass() {
-		_classCallCheck(this, WelcomeClass);
+  function WelcomeClass() {
+    _classCallCheck(this, WelcomeClass);
 
-		return _possibleConstructorReturn(this, (WelcomeClass.__proto__ || Object.getPrototypeOf(WelcomeClass)).apply(this, arguments));
-	}
+    return _possibleConstructorReturn(this, (WelcomeClass.__proto__ || Object.getPrototypeOf(WelcomeClass)).apply(this, arguments));
+  }
 
-	_createClass(WelcomeClass, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'h1',
-				null,
-				'Hello ',
-				this.props.name
-			);
-		}
-	}]);
+  _createClass(WelcomeClass, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Hello ',
+        this.props.name
+      );
+    }
+  }]);
 
-	return WelcomeClass;
+  return WelcomeClass;
 }(_react2.default.Component);
 
 console.log(hello);
@@ -9816,63 +9816,61 @@ console.log(_react2.default.createElement(Welcome, null));
 // extracting components, state, lifecycle hooks
 
 var Clock = function (_React$Component2) {
-	_inherits(Clock, _React$Component2);
+  _inherits(Clock, _React$Component2);
 
-	function Clock(props) {
-		_classCallCheck(this, Clock);
+  function Clock(props) {
+    _classCallCheck(this, Clock);
 
-		var _this2 = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
+    var _this2 = _possibleConstructorReturn(this, (Clock.__proto__ || Object.getPrototypeOf(Clock)).call(this, props));
 
-		_this2.state = {
-			date: new Date()
-		};
-		return _this2;
-	}
+    _this2.state = {
+      date: new Date()
+    };
+    return _this2;
+  }
 
-	_createClass(Clock, [{
-		key: 'componentDidMount',
-		value: function componentDidMount() {
-			var _this3 = this;
+  _createClass(Clock, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this3 = this;
 
-			this.timerID = setInterval(function () {
-				return _this3.tick();
-			}, 1000);
-		}
-	}, {
-		key: 'componentWillUnmount',
-		value: function componentWillUnmount() {
-			clearInterval(this.timerID);
-		}
-	}, {
-		key: 'tick',
-		value: function tick() {
-			this.setState({
-				date: new Date()
-			});
-		}
-	}, {
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(
-				'div',
-				null,
-				_react2.default.createElement(
-					'h1',
-					null,
-					'Hello, world!'
-				),
-				_react2.default.createElement(
-					'h2',
-					null,
-					'It is ',
-					this.state.date.toLocaleTimeString(),
-					'.'
-				)
-			);
-		}
-	}]);
+      this.timerID = setInterval(function () {
+        return _this3.tick();
+      }, 1000);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearInterval(this.timerID);
+    }
+  }, {
+    key: 'tick',
+    value: function tick() {
+      this.setState({ date: new Date() });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Hello, world!'
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'It is ',
+          this.state.date.toLocaleTimeString(),
+          '.'
+        )
+      );
+    }
+  }]);
 
-	return Clock;
+  return Clock;
 }(_react2.default.Component);
 
 // handle events
@@ -9881,33 +9879,148 @@ var Clock = function (_React$Component2) {
 
 
 function ActionLink() {
-	function handleClick(e) {
-		e.preventDefault();
-		console.log('The link was clicked');
-	}
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked');
+  }
 
-	return _react2.default.createElement(
-		'a',
-		{ href: '#', onClick: handleClick },
-		'Click me'
-	);
+  return _react2.default.createElement(
+    'a',
+    { href: '#', onClick: handleClick },
+    'Click me'
+  );
 }
 
 function App() {
-	return _react2.default.createElement(
-		'div',
-		null,
-		_react2.default.createElement(Clock, null),
-		_react2.default.createElement(Clock, null),
-		_react2.default.createElement(Clock, null),
-		_react2.default.createElement(Clock, null)
-	);
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(Clock, null),
+    _react2.default.createElement(Clock, null),
+    _react2.default.createElement(Clock, null),
+    _react2.default.createElement(Clock, null)
+  );
 }
 
 //Conditional Rendering
+function UserGreeting(props) {
+  return _react2.default.createElement(
+    'h1',
+    null,
+    'Welcome back!'
+  );
+}
+
+function GuestGreeting(props) {
+  return _react2.default.createElement(
+    'h1',
+    null,
+    'Please sign up.'
+  );
+}
+
+function Greeting(props) {
+  var isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return _react2.default.createElement(UserGreeting, null);
+  } else {
+    return _react2.default.createElement(GuestGreeting, null);
+  }
+}
+
+function LoginButton(props) {
+  return _react2.default.createElement(
+    'button',
+    { onClick: props.onClick },
+    'Login'
+  );
+}
+
+function LogoutButton(props) {
+  return _react2.default.createElement(
+    'button',
+    { onClick: props.onClick },
+    'Logout'
+  );
+}
+
+var LoginControl = function (_React$Component3) {
+  _inherits(LoginControl, _React$Component3);
+
+  function LoginControl(props) {
+    _classCallCheck(this, LoginControl);
+
+    var _this4 = _possibleConstructorReturn(this, (LoginControl.__proto__ || Object.getPrototypeOf(LoginControl)).call(this, props));
+
+    _this4.state = {
+      isLoggedIn: false
+    };
+
+    _this4.handleLoginClick = function () {
+      _this4.setState({ isLoggedIn: true });
+    };
+
+    _this4.handleLogoutClick = function () {
+      _this4.setState({ isLoggedIn: false });
+    };
+
+    return _this4;
+  }
+
+  _createClass(LoginControl, [{
+    key: 'render',
+    value: function render() {
+      var isLoggedIn = this.state.idLoggedIn;
+      var button = null;
+      if (isLoggedIn) {
+        button = _react2.default.createElement(LogoutButton, { onClick: this.handleLogoutClick });
+      } else {
+        button = _react2.default.createElement(LoginButton, { onClick: this.handleLoginClick });
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(Greeting, { isLoggedIn: isLoggedIn }),
+        ' ',
+        button
+      );
+    }
+  }]);
+
+  return LoginControl;
+}(_react2.default.Component);
+
+// Inline if with logical && operator
 
 
-_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
+function MailBox(props) {
+  var unreadMessages = props.unreadMessages;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Hello!'
+    ),
+    unreadMessages.length > 0 && _react2.default.createElement(
+      'h2',
+      null,
+      'You have ',
+      unreadMessages.length,
+      'unread message.'
+    )
+  );
+}
+
+var message = ['React', 'Re: React', 'Re:Re: React'];
+
+//Inline if-else with conditional operator
+
+//List and Keys
+
+_reactDom2.default.render(_react2.default.createElement(MailBox, { unreadMessages: message }), document.getElementById('root'));
 
 /***/ }),
 /* 82 */
