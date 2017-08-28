@@ -10019,9 +10019,29 @@ var message = ['React', 'Re: React', 'Re:Re: React'];
 //Inline if-else with conditional operator
 
 //List and Keys
+var numbers = [1, 2, 3, 4, 5];
+var doubled = numbers.map(function (number) {
+  return number * 2;
+});
+console.log(doubled);
 
+function NumberList(props) {
+  var numbers = props.numbers;
+  var listItems = numbers.map(function (number) {
+    return _react2.default.createElement(
+      'li',
+      null,
+      number
+    );
+  });
+  return _react2.default.createElement(
+    'ul',
+    null,
+    listItems
+  );
+}
 
-_reactDom2.default.render(_react2.default.createElement(MailBox, { unreadMessages: message }), document.getElementById('root'));
+_reactDom2.default.render(_react2.default.createElement(NumberList, { numbers: numbers }), document.getElementById('root'));
 
 /***/ }),
 /* 82 */

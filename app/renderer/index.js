@@ -168,9 +168,24 @@ const message = ['React', 'Re: React', 'Re:Re: React']
 //Inline if-else with conditional operator
 
 //List and Keys
+const numbers = [1, 2, 3, 4, 5, ]
+const doubled = numbers.map((number) => number * 2)
+console.log(doubled)
+
+
+
+function NumberList(props) {
+  const numbers = props.numbers
+  const listItems = numbers.map((number) => <li>{number}</li>)
+  return (
+    <ul>{listItems}</ul>
+  )
+}
 
 
 
 
 ReactDom.render(
-  <MailBox unreadMessages={message}/>, document.getElementById('root'))
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+)
