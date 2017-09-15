@@ -176,16 +176,85 @@ console.log(doubled)
 
 function NumberList(props) {
   const numbers = props.numbers
-  const listItems = numbers.map((number) => <li>{number}</li>)
+  const listItems = numbers.map((number) => <li key={number.toString()}>{number}</li>)
   return (
     <ul>{listItems}</ul>
   )
 }
 
+// Forms
+// controlled components: input textarea  select
+// input textarea  value for display
+class NameForm extends React.Component {
+  state = {
+    value: ''
+  }
+  constructor(props) {
+    super(props)
+  }
+
+  handleChage = (event) => {
+    this.setState({value: event.target.value.toUpperCase()})
+  }
+
+  handleSubmit = (event) => {
+    alert('A name was submitted: ' + this.state.value)
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChage} />
+          <textarea type="text" value={this.state.value} onChange={this.handleChage} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
+}
+
+// select tag
+class FlavorForm extends React.Component {
+  state = {
+    value: 'cocount'
+  }
+  constructor(props) {
+    super(props)
+  }
+
+  handleChange = (event) => {
+    this.setState({value: event.target.value})
+  }
+
+  handleSubmit = (event) => {
+    alert('Your favorite flavor is:' + this.state.value)
+    event.preventDefault()
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite La Croix flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
+}
 
 
 
 ReactDom.render(
-  <NumberList numbers={numbers} />,
+  <FlavorForm />,
   document.getElementById('root')
 )

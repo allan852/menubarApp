@@ -10030,7 +10030,7 @@ function NumberList(props) {
   var listItems = numbers.map(function (number) {
     return _react2.default.createElement(
       'li',
-      null,
+      { key: number.toString() },
       number
     );
   });
@@ -10041,7 +10041,126 @@ function NumberList(props) {
   );
 }
 
-_reactDom2.default.render(_react2.default.createElement(NumberList, { numbers: numbers }), document.getElementById('root'));
+// Forms
+// controlled components: input textarea  select
+// input textarea  value for display
+
+var NameForm = function (_React$Component4) {
+  _inherits(NameForm, _React$Component4);
+
+  function NameForm(props) {
+    _classCallCheck(this, NameForm);
+
+    var _this5 = _possibleConstructorReturn(this, (NameForm.__proto__ || Object.getPrototypeOf(NameForm)).call(this, props));
+
+    _this5.state = {
+      value: ''
+    };
+
+    _this5.handleChage = function (event) {
+      _this5.setState({ value: event.target.value.toUpperCase() });
+    };
+
+    _this5.handleSubmit = function (event) {
+      alert('A name was submitted: ' + _this5.state.value);
+      event.preventDefault();
+    };
+
+    return _this5;
+  }
+
+  _createClass(NameForm, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        _react2.default.createElement(
+          'label',
+          null,
+          'Name:',
+          _react2.default.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChage }),
+          _react2.default.createElement('textarea', { type: 'text', value: this.state.value, onChange: this.handleChage })
+        ),
+        _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+      );
+    }
+  }]);
+
+  return NameForm;
+}(_react2.default.Component);
+
+// select tag
+
+
+var FlavorForm = function (_React$Component5) {
+  _inherits(FlavorForm, _React$Component5);
+
+  function FlavorForm(props) {
+    _classCallCheck(this, FlavorForm);
+
+    var _this6 = _possibleConstructorReturn(this, (FlavorForm.__proto__ || Object.getPrototypeOf(FlavorForm)).call(this, props));
+
+    _this6.state = {
+      value: 'cocount'
+    };
+
+    _this6.handleChange = function (event) {
+      _this6.setState({ value: event.target.value });
+    };
+
+    _this6.handleSubmit = function (event) {
+      alert('Your favorite flavor is:' + _this6.state.value);
+      event.preventDefault();
+    };
+
+    return _this6;
+  }
+
+  _createClass(FlavorForm, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'form',
+        { onSubmit: this.handleSubmit },
+        _react2.default.createElement(
+          'label',
+          null,
+          'Pick your favorite La Croix flavor:',
+          _react2.default.createElement(
+            'select',
+            { value: this.state.value, onChange: this.handleChange },
+            _react2.default.createElement(
+              'option',
+              { value: 'grapefruit' },
+              'Grapefruit'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'lime' },
+              'Lime'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'coconut' },
+              'Coconut'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'mango' },
+              'Mango'
+            )
+          )
+        ),
+        _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
+      );
+    }
+  }]);
+
+  return FlavorForm;
+}(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(FlavorForm, null), document.getElementById('root'));
 
 /***/ }),
 /* 82 */
