@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 import menubar from 'menubar'
 import { ipcMain, globalShortcut, dialog, clipboard } from 'electron'
-import db from '../db/db'
+// import db from '../db/db'
 
 let mb = menubar()
 let clipboardIntervel = null
@@ -41,9 +41,9 @@ mb.on('ready', () => {
 	registerShortkey()
 	monitorClipboard()
 
-	db.find({}, (err, docs) => {
-		console.log(docs)
-	})
+	// db.find({}, (err, docs) => {
+	// 	console.log(docs)
+	// })
 })
 
 mb.on('after-show', () => {
@@ -70,7 +70,7 @@ clipboardEmitter.on('clipboard:changed', (newValue, lastValue) => {
 		text: newValue
 	}
 	// console.log(db)
-	db.insert(doc, (err, newDoc) => {
-		console.log(err, newDoc)
-	})
+	// db.insert(doc, (err, newDoc) => {
+	// 	console.log(err, newDoc)
+	// })
 })

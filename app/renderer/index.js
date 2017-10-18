@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 // import App from './app.js'
-require('antd/dist/antd.css')
+require('./style/antd.css')
 
 let hello = <h1>Hello React</h1>
 let Hello = (
@@ -252,9 +252,57 @@ class FlavorForm extends React.Component {
   }
 }
 
+// Handling Multiple inputs
+class Reservation extends React.Component {
+  state = {
+    isGoing: true,
+    numberOfGuests: 2
+  }
+  constructor (props) {
+    super(props)
+  }
+
+  handleInputChange = (e) => {
+    const target = e.target
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name
+
+    this.setState({
+      [name]: value
+    })
+
+    console.log(this.state)
+  }
+
+  render() {
+    return (
+      <form>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange}/>
+        </label>
+        <br />
+        <label>
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange}/>
+        </label>
+      </form>
+    )
+  }
+
+}
+
 
 
 ReactDom.render(
-  <FlavorForm />,
+  <Reservation />,
   document.getElementById('root')
 )
